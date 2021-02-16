@@ -32,7 +32,38 @@ private handleError(error: HttpErrorResponse): any {
     }
     return throwError(
     'Something bad happened; please try again later.');
+  } 
+}
+
+export class UserLoginService {
+  // Inject the HttpClient module to the constructor params
+ // This will provide HttpClient to the entire class, making it available via this.http
+  constructor(private http: HttpClient) {
   }
+ // Making the api call for the user login endpoint
+  public userLogin(userDetails: any): Observable<any> {
+    console.log(userDetails);
+    return this.http.post(apiUrl + 'users', userDetails).pipe(
+    catchError(this.handleError)
+    );
+  }
+
+private handleError(error: HttpErrorResponse): any {
+    if (error.error instanceof ErrorEvent) {
+    console.error('Some error occurred:', error.error.message);
+    } else {
+    console.error(
+        `Error Status code ${error.status}, ` +
+        `Error body is: ${error.error}`);
+    }
+    return throwError(
+    'Something bad happened; please try again later.');
+  } 
+}
+
+export class getAllMovies {
+  constructor(private http: HttpClient) {}
+
   getAllMovies(): Observable<any> {
     const token = localStorage.getItem('token');
     return this.http.get(apiUrl + 'movies', {headers: new HttpHeaders(
@@ -43,10 +74,185 @@ private handleError(error: HttpErrorResponse): any {
       catchError(this.handleError)
     );
   }
-// Non-typed response extraction
+  // Non-typed response extraction
   private extractResponseData(res: Response): any {
     const body = res;
     return body || { };
-  }  
+  } 
 }
 
+export class getOneMovie {
+  constructor(private http: HttpClient) {}
+
+getOneMovie(): Observable<any> {
+    const token = localStorage.getItem('token');
+    return this.http.get(apiUrl + 'movie', {headers: new HttpHeaders(
+      {
+        Authorization: 'Bearer ' + token,
+      })}).pipe(
+      map(this.extractResponseData),
+      catchError(this.handleError)
+    );
+  }
+  // Non-typed response extraction
+  private extractResponseData(res: Response): any {
+    const body = res;
+    return body || { };
+  } 
+}
+
+export class getDirector {
+  constructor(private http: HttpClient) {}
+
+getDirector(): Observable<any> {
+    const token = localStorage.getItem('token');
+    return this.http.get(apiUrl + 'director', {headers: new HttpHeaders(
+      {
+        Authorization: 'Bearer ' + token,
+      })}).pipe(
+      map(this.extractResponseData),
+      catchError(this.handleError)
+    );
+  }
+  // Non-typed response extraction
+  private extractResponseData(res: Response): any {
+    const body = res;
+    return body || { };
+  } 
+}
+
+export class getGenre {
+  constructor(private http: HttpClient) {}
+
+  getGenre(): Observable<any> {
+    const token = localStorage.getItem('token');
+    return this.http.get(apiUrl + 'genre', {headers: new HttpHeaders(
+      {
+        Authorization: 'Bearer ' + token,
+      })}).pipe(
+      map(this.extractResponseData),
+      catchError(this.handleError)
+    );
+  }
+  // Non-typed response extraction
+  private extractResponseData(res: Response): any {
+    const body = res;
+    return body || { };
+  } 
+}
+
+export class getUser {
+  constructor(private http: HttpClient) {}
+
+  getUser(): Observable<any> {
+    const token = localStorage.getItem('token');
+    return this.http.get(apiUrl + 'user', {headers: new HttpHeaders(
+      {
+        Authorization: 'Bearer ' + token,
+      })}).pipe(
+      map(this.extractResponseData),
+      catchError(this.handleError)
+    );
+  }
+  // Non-typed response extraction
+  private extractResponseData(res: Response): any {
+    const body = res;
+    return body || { };
+  } 
+}
+
+export class getFavoriteMovie {
+  constructor(private http: HttpClient) {}
+  getFavoriteMovie(): Observable<any> {
+    const token = localStorage.getItem('token');
+    return this.http.get(apiUrl + 'FavoriteMovie', {headers: new HttpHeaders(
+      {
+        Authorization: 'Bearer ' + token,
+      })}).pipe(
+      map(this.extractResponseData),
+      catchError(this.handleError)
+    );
+  }
+  // Non-typed response extraction
+  private extractResponseData(res: Response): any {
+    const body = res;
+    return body || { };
+  } 
+}
+
+export class addFavorite {
+  constructor(private http: HttpClient) {}
+  addFavorite(): Observable<any> {
+    const token = localStorage.getItem('token');
+    return this.http.get(apiUrl + 'favorite', {headers: new HttpHeaders(
+      {
+        Authorization: 'Bearer ' + token,
+      })}).pipe(
+      map(this.extractResponseData),
+      catchError(this.handleError)
+    );
+  }
+  // Non-typed response extraction
+  private extractResponseData(res: Response): any {
+    const body = res;
+    return body || { };
+  } 
+}
+
+export class editUser {
+  constructor(private http: HttpClient) {}
+
+  editUser(): Observable<any> {
+    const token = localStorage.getItem('token');
+    return this.http.get(apiUrl + 'user', {headers: new HttpHeaders(
+      {
+        Authorization: 'Bearer ' + token,
+      })}).pipe(
+      map(this.extractResponseData),
+      catchError(this.handleError)
+    );
+  }
+  // Non-typed response extraction
+  private extractResponseData(res: Response): any {
+    const body = res;
+    return body || { };
+  } 
+}
+
+export class deleteUser {
+  constructor(private http: HttpClient) {}
+  deleteUser(): Observable<any> {
+    const token = localStorage.getItem('token');
+    return this.http.get(apiUrl + 'user', {headers: new HttpHeaders(
+      {
+        Authorization: 'Bearer ' + token,
+      })}).pipe(
+      map(this.extractResponseData),
+      catchError(this.handleError)
+    );
+  }
+  // Non-typed response extraction
+  private extractResponseData(res: Response): any {
+    const body = res;
+    return body || { };
+  } 
+}
+
+export class deleteUser {
+  constructor(private http: HttpClient) {}
+  deleteMovie(): Observable<any> {
+    const token = localStorage.getItem('token');
+    return this.http.get(apiUrl + 'movie', {headers: new HttpHeaders(
+      {
+        Authorization: 'Bearer ' + token,
+      })}).pipe(
+      map(this.extractResponseData),
+      catchError(this.handleError)
+    );
+  }
+  // Non-typed response extraction
+  private extractResponseData(res: Response): any {
+    const body = res;
+    return body || { };
+  } 
+}
