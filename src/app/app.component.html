@@ -1,3 +1,4 @@
+<router-outlet></router-outlet>
 <mat-card>
   <mat-card-header>
     <mat-card-title>Sign Up!</mat-card-title>
@@ -9,7 +10,7 @@
     </h1>
     <button
       Mat-raised-button
-  // Adding the click event on the signup button
+     Adding the click event on the signup button
       (click)="openUserRegistrationDialog()"
       style="margin-right: 10px;"
       color="primary"
@@ -19,6 +20,8 @@
     <button
       mat-raised-button
       color="primary"
+      (click)="openUserLoginDialog()"
+      style="margin-right: 10px;"
     >
       Login
     </button>
