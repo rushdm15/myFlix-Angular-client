@@ -35,6 +35,9 @@ private handleError(error: HttpErrorResponse): any {
   } 
 }
 
+@Injectable({
+  providedIn: 'root'
+})
 export class UserLoginService {
   // Inject the HttpClient module to the constructor params
  // This will provide HttpClient to the entire class, making it available via this.http
@@ -61,6 +64,9 @@ private handleError(error: HttpErrorResponse): any {
   } 
 }
 
+@Injectable({
+  providedIn: 'root'
+})
 export class getAllMovies {
   constructor(private http: HttpClient) {}
 
@@ -69,8 +75,7 @@ export class getAllMovies {
     return this.http.get(apiUrl + 'movies', {headers: new HttpHeaders(
       {
         Authorization: 'Bearer ' + token,
-      })}).pipe(
-      map(this.extractResponseData),
+      })}).pipe(map(this.extractResponseData),
       catchError(this.handleError)
     );
   }
@@ -81,6 +86,9 @@ export class getAllMovies {
   } 
 }
 
+@Injectable({
+  providedIn: 'root'
+})
 export class getOneMovie {
   constructor(private http: HttpClient) {}
 
@@ -89,8 +97,7 @@ getOneMovie(): Observable<any> {
     return this.http.get(apiUrl + 'movie', {headers: new HttpHeaders(
       {
         Authorization: 'Bearer ' + token,
-      })}).pipe(
-      map(this.extractResponseData),
+      })}).pipe(map(this.extractResponseData),
       catchError(this.handleError)
     );
   }
@@ -101,6 +108,9 @@ getOneMovie(): Observable<any> {
   } 
 }
 
+@Injectable({
+  providedIn: 'root'
+})
 export class getDirector {
   constructor(private http: HttpClient) {}
 
@@ -109,8 +119,7 @@ getDirector(): Observable<any> {
     return this.http.get(apiUrl + 'director', {headers: new HttpHeaders(
       {
         Authorization: 'Bearer ' + token,
-      })}).pipe(
-      map(this.extractResponseData),
+      })}).pipe(map(this.extractResponseData),
       catchError(this.handleError)
     );
   }
@@ -121,6 +130,9 @@ getDirector(): Observable<any> {
   } 
 }
 
+@Injectable({
+  providedIn: 'root'
+})
 export class getGenre {
   constructor(private http: HttpClient) {}
 
@@ -129,8 +141,7 @@ export class getGenre {
     return this.http.get(apiUrl + 'genre', {headers: new HttpHeaders(
       {
         Authorization: 'Bearer ' + token,
-      })}).pipe(
-      map(this.extractResponseData),
+      })}).pipe(map(this.extractResponseData),
       catchError(this.handleError)
     );
   }
@@ -141,6 +152,9 @@ export class getGenre {
   } 
 }
 
+@Injectable({
+  providedIn: 'root'
+})
 export class getUser {
   constructor(private http: HttpClient) {}
 
@@ -149,8 +163,7 @@ export class getUser {
     return this.http.get(apiUrl + 'user', {headers: new HttpHeaders(
       {
         Authorization: 'Bearer ' + token,
-      })}).pipe(
-      map(this.extractResponseData),
+      })}).pipe(map(this.extractResponseData),
       catchError(this.handleError)
     );
   }
@@ -161,6 +174,9 @@ export class getUser {
   } 
 }
 
+@Injectable({
+  providedIn: 'root'
+})
 export class getFavoriteMovie {
   constructor(private http: HttpClient) {}
   getFavoriteMovie(): Observable<any> {
@@ -168,8 +184,7 @@ export class getFavoriteMovie {
     return this.http.get(apiUrl + 'FavoriteMovie', {headers: new HttpHeaders(
       {
         Authorization: 'Bearer ' + token,
-      })}).pipe(
-      map(this.extractResponseData),
+      })}).pipe(map(this.extractResponseData),
       catchError(this.handleError)
     );
   }
@@ -180,6 +195,9 @@ export class getFavoriteMovie {
   } 
 }
 
+@Injectable({
+  providedIn: 'root'
+})
 export class addFavorite {
   constructor(private http: HttpClient) {}
   addFavorite(): Observable<any> {
@@ -187,8 +205,7 @@ export class addFavorite {
     return this.http.get(apiUrl + 'favorite', {headers: new HttpHeaders(
       {
         Authorization: 'Bearer ' + token,
-      })}).pipe(
-      map(this.extractResponseData),
+      })}).pipe(map(this.extractResponseData),
       catchError(this.handleError)
     );
   }
@@ -199,6 +216,9 @@ export class addFavorite {
   } 
 }
 
+@Injectable({
+  providedIn: 'root'
+})
 export class editUser {
   constructor(private http: HttpClient) {}
 
@@ -207,8 +227,7 @@ export class editUser {
     return this.http.get(apiUrl + 'user', {headers: new HttpHeaders(
       {
         Authorization: 'Bearer ' + token,
-      })}).pipe(
-      map(this.extractResponseData),
+      })}).pipe(map(this.extractResponseData),
       catchError(this.handleError)
     );
   }
@@ -219,6 +238,9 @@ export class editUser {
   } 
 }
 
+@Injectable({
+  providedIn: 'root'
+})
 export class deleteUser {
   constructor(private http: HttpClient) {}
   deleteUser(): Observable<any> {
@@ -238,6 +260,9 @@ export class deleteUser {
   } 
 }
 
+@Injectable({
+  providedIn: 'root'
+})
 export class deleteUser {
   constructor(private http: HttpClient) {}
   deleteMovie(): Observable<any> {
@@ -245,8 +270,7 @@ export class deleteUser {
     return this.http.get(apiUrl + 'movie', {headers: new HttpHeaders(
       {
         Authorization: 'Bearer ' + token,
-      })}).pipe(
-      map(this.extractResponseData),
+      })}).pipe(map(this.extractResponseData),
       catchError(this.handleError)
     );
   }
