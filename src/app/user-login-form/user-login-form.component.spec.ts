@@ -1,8 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { Router } from '@angular/router';
+// import { Router } from '@angular/router';
 import { UserLoginFormComponent } from './user-login-form.component';
 
-this.router.navigate(['movies']);
+// this.router.navigate(['movies']);
 
 describe('UserLoginFormComponent', () => {
   let component: UserLoginFormComponent;
