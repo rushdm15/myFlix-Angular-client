@@ -3,6 +3,7 @@ import { GetAllMoviesService } from '../fetch-api-data.service';
 import { GenreViewComponent } from '../genre-view/genre-view.component';
 import { DirectorViewComponent } from '../director-view/director-view.component';
 import { SynopsisViewComponent } from '../synopsis-view/synopsis-view.component';
+import { FavoritesViewComponent } from '../favorites-view/favorites-view.component';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 
 @Component({
@@ -42,6 +43,11 @@ getMovies(): void {
   }
   openSynopsisViewDialog(): void {
     this.dialog.open(SynopsisViewComponent, {
+      width: '280px'
+    });
+  }
+  openFavoritesViewDialog(): void {
+    this.dialog.open(FavoritesViewComponent, {
       width: '280px'
     });
   }
