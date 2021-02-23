@@ -25,7 +25,7 @@
             required
           >
         </mat-form-field>
-        <!-- <mat-form-field>
+         <mat-form-field>
           <input
             matInput
             [(ngModel)]="userData.Email"
@@ -35,21 +35,12 @@
             required
           >
         </mat-form-field>
-        <mat-form-field>
-          <input
-            matInput
-            [(ngModel)]="userData.Birthday"
-            type = "date"
-            placeholder="Birthday"  
-            name="Birthday"
-          >
-        </mat-form-field> -->
       </form>
     </mat-card-content>
     <mat-card-actions>
         <button
           mat-raised-button
-          (click)="registerUser()"
+          (click)="loginUser()"
           color="primary"
         >
           Login

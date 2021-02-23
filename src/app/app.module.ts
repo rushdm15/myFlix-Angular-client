@@ -1,10 +1,9 @@
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
-import { RouterModule, Routes } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
+import { MatGridListModule } from '@angular/material/grid-list';
 
 import { MatInputModule } from '@angular/material/input';
-import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -14,18 +13,14 @@ import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { UserRegistrationService } from './fetch-api-data.service';
+// import { UserRegistrationService } from './fetch-api-data.service';
 import { UserLoginFormComponent } from './user-login-form/user-login-form.component';
 import { UserRegistrationFormComponent } from './user-registration-form/user-registration-form.component';
 import { MovieCardComponent } from './movie-card/movie-card.component';
 import { WelcomePageComponent } from './welcome-page/welcome-page.component';
 
-const appRoutes: Routes = [
-  { path: 'welcome', component: WelcomePageComponent },
-  { path: 'movies', component: MovieCardComponent },
-  { path: '', redirectTo: 'welcome', pathMatch: 'prefix' },
-];
 
 @NgModule({
   declarations: [
@@ -37,17 +32,17 @@ const appRoutes: Routes = [
   ],
   imports: [
     BrowserModule,
-    HttpClientModule,
     AppRoutingModule,
-    FormsModule,
     BrowserAnimationsModule,
+    FormsModule,
     MatDialogModule,
     MatInputModule,
     MatButtonModule,
     MatCardModule,
     MatFormFieldModule,
     MatSnackBarModule,
-    RouterModule.forRoot(appRoutes)
+    MatGridListModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

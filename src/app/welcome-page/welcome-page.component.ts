@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserLoginFormComponent } from '../user-login-form/user-login-form.component';
 import { UserRegistrationFormComponent } from '../user-registration-form/user-registration-form.component';
-import { MatDialog } from '@angular/material/dialog';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-welcome-page',
@@ -17,7 +17,7 @@ export class WelcomePageComponent implements OnInit {
       width: '280px'
     });
   }
-openUserLoginDialog(): void {
+  openUserLoginDialog(): void {
     this.dialog.open(UserLoginFormComponent, {
       width: '280px'
     });
