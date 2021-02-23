@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { GetAllMoviesService } from '../fetch-api-data.service';
 import { GenreViewComponent } from '../genre-view/genre-view.component';
 import { DirectorViewComponent } from '../director-view/director-view.component';
+import { SynopsisViewComponent } from '../synopsis-view/synopsis-view.component';
 
 @Component({
   selector: 'app-movie-card',
@@ -32,6 +33,11 @@ getMovies(): void {
   }
   openDirectorViewDialog(): void {
     this.dialog.open(DirectorViewComponent, {
+      width: '280px'
+    });
+  }
+  openSynopsisViewDialog(): void {
+    this.dialog.open(SynopsisViewComponent, {
       width: '280px'
     });
   }
