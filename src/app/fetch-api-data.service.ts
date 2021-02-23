@@ -84,6 +84,12 @@ export class GetAllMoviesService {
     );
   }
   // Non-typed response extraction
+  private extractResponseData(res: Response | Object): Response | Object { // res: Response caused an error above on this.extractResponseData
+    const body = res;
+    return body || { };
+  }
+  private handleError(error: HttpErrorResponse): any {
+    if (error.error instanceof ErrorEvent) {
       console.error('Some error occurred:', error.error.message);
     } else {
       console.error(
