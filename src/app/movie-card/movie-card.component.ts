@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { GetAllMoviesService } from '../fetch-api-data.service';
+import { GenreViewComponent } from '../genre-view/genre-view.component';
 
 @Component({
   selector: 'app-movie-card',
@@ -21,6 +22,11 @@ getMovies(): void {
       this.loading = false;
       console.log(this.movies);
       return this.movies;
+    });
+  }
+  openGenreViewDialog(): void {
+    this.dialog.open(GenreViewComponent, {
+      width: '280px'
     });
   }
 }
