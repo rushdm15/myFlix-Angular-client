@@ -43,9 +43,9 @@ export class ProfileViewComponent implements OnInit {
       width: '500px'
     });
   }
-  openProfileViewDialog(): void {
-    this.dialog.open(ProfileViewComponent, {
-      width: '500px'
-    });
-  }
+  // openProfileViewDialog(): void {
+  //   this.dialog.open(ProfileViewComponent, {
+  //     width: '500px'
+  //   });
+  // }
 }
