@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { MovieCardComponent } from '../movie-card/movie-card.component';
 import { FavoritesViewComponent } from '../favorites-view/favorites-view.component';
-// import { UserRegistrationFormComponent } from '../user-registration-form/user-registration-form.component';
+import { EditUserService } from '../fetch-api-data.service';
 
 @Component({
   selector: 'app-profile-view',
@@ -10,14 +10,29 @@ import { FavoritesViewComponent } from '../favorites-view/favorites-view.compone
   styleUrls: ['./profile-view.component.scss']
 })
 export class ProfileViewComponent implements OnInit {
-  constructor(public dialog: MatDialog) { }
+  user: any[] = [];
+  loading = true;
+  constructor(
+    public fetchApiData: EditUserService,
+    public dialog: MatDialog
+    ) { }
   ngOnInit(): void {
+    this.editUser();
   }
-  // openUserRegistrationDialog(): void {
-  //   this.dialog.open(UserRegistrationFormComponent, {
-  //     width: '280px'
-  //   });
-  // }
+
+  editUser(): void {
+    this.fetchApiData.editUser().subscribe((resp: any) => {
+        this.user = resp;
+        this.loading = false;
+        console.log(this.user);
+        return this.user;
+      });
+    }
+  openEditUserDialog(): void {
+    this.dialog.open(ProfileViewComponent, {
+      width: '280px'
+    });
+  }
   openFavoritesViewDialog(): void {
     this.dialog.open(FavoritesViewComponent, {
       width: '280px'
