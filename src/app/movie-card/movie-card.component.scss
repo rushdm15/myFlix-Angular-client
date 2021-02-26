@@ -1,0 +1,67 @@
+img {
+  width: 100%;
+  height: 20vw;
+}
+.container {
+  padding-bottom: 1rem;
+  .movie-cards {
+    margin: 2rem;
+
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+
+    mat-card-actions {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1rem;
+    }
+  }
+}
+mat-icon {
+  cursor: pointer;
+}
+
+@media all and (max-width: 750px) {
+  .movie-cards {
+    img {
+      height: auto;
+    }
+  }
+}
+
+@media all and (max-width: 1024px) {
+  .movie-cards {
+    img {
+      height: 60vw;
+    }
+  }
+}
+
+@media all and (max-width: 720px) {
+  .movie-cards {
+    img {
+      height: 90vw;
+    }
+  }
+}
+// .grid{
+//   width: 80%;
+//   margin: 0 auto;
+
+// }
+
+// .loader {
+//   border: 16px solid #f3f3f3; /* Light grey */
+//   border-top: 16px solid #3498db; /* Blue */
+//   border-radius: 50%;
+//   width: 60px;
+//   height: 60px;
+//   animation: spin 2s linear infinite;
+// }
+
+// @keyframes spin {
+//   0% { transform: rotate(0deg); }
+//   100% { transform: rotate(360deg); }
+// }

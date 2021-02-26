@@ -1,0 +1,38 @@
+<!-- <p>profile-view works!</p> -->
+<div class="main-page">
+    <h1>
+      Welcome to your homepage!
+    </h1>
+      <div>
+        <button mat-raised-button
+          (click)="openEditUserDialog()"
+          style="margin-right: 10px;"
+          color="primary"
+        >
+          Edit User
+        </button>
+        <button
+          mat-raised-button
+          (click)="openFavoritesViewDialog()"
+          style="margin-right: 10px;"
+          color="primary"
+        >
+          Your Favorites
+        </button>
+        <button
+          mat-raised-button
+          color="primary"
+          (click)="openMoviesDialog()"
+          style="margin-right: 10px;"
+        >
+          Go To All Movies
+        </button>
+        <!-- <button
+        mat-raised-button
+        color="primary"
+        (click)="openProfileViewDialog()"
+      >
+        Your Profile Settings
+      </button> -->
+      </div>
+  </div>
