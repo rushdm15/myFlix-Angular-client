@@ -1,5 +1,8 @@
 # MyFlixAngularClient
 
+[pic.png](https://github.com/rushdm15/myFlix-Angular-client/blob/master/pic.png?raw=true)
+[pic2.png](https://github.com/rushdm15/myFlix-Angular-client/blob/master/pic2.png?raw=true)
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.0.
 
 ## Development server
