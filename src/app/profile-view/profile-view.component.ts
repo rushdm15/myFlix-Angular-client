@@ -3,6 +3,7 @@ import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { MovieCardComponent } from '../movie-card/movie-card.component';
 import { FavoritesViewComponent } from '../favorites-view/favorites-view.component';
 import { EditUserService } from '../fetch-api-data.service';
+import { EditUserComponent } from '../edit-user/edit-user.component';
 
 @Component({
   selector: 'app-profile-view',
@@ -29,7 +30,7 @@ export class ProfileViewComponent implements OnInit {
       });
     }
   openEditUserDialog(): void {
-    this.dialog.open(ProfileViewComponent, {
+    this.dialog.open(EditUserComponent, {
       width: '280px'
     });
   }
