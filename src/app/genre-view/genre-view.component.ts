@@ -8,7 +8,7 @@ import { GetGenreService } from '../fetch-api-data.service';
   styleUrls: ['./genre-view.component.scss']
 })
 export class GenreViewComponent implements OnInit {
-  movies: any[] = [];
+  genres: any[] = [];
   loading = true;
   constructor(
     public fetchApiData: GetGenreService,
@@ -16,6 +16,15 @@ export class GenreViewComponent implements OnInit {
     ) { }
 
   ngOnInit(): void {
+    this.getGenre();
   }
 
+  getGenre(): void {
+    this.fetchApiData.getGenre().subscribe((resp: any) => {
+        this.genres = resp;
+        this.loading = false;
+        console.log(this.genres);
+        return this.genres;
+      });
+    }
 }
