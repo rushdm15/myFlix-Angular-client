@@ -31,6 +31,7 @@ getMovies(): void {
       return this.movies;
     });
   }
+
   openGenreViewDialog(): void {
     this.dialog.open(GenreViewComponent, {
       width: '280px'
@@ -52,3 +53,5 @@ getMovies(): void {
     });
   }
 }
+
+/**  Dialogs enable buttons to work, must import component as well as MatDialog.  */

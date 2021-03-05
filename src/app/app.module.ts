@@ -34,7 +34,7 @@ const appRoutes: Routes = [
   { path: 'movies', component: MovieCardComponent },
   { path: '', redirectTo: 'welcome', pathMatch: 'prefix' },
 ];
-
+/** Automatically added with compilation function in terminal. Same with imports */
 @NgModule({
   declarations: [
     AppComponent,

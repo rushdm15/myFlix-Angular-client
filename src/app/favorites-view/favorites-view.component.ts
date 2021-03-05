@@ -19,8 +19,11 @@ export class FavoritesViewComponent implements OnInit {
     ) { }
 
 ngOnInit(): void {
-  this.getFavorites();
+  this.getFavorites();  
 }
+/** ngOnInit method is called once the component has received all its inputs 
+ * (all its data-bound properties) 
+ * from the calling component—in other words, the real-life user. */
 
 getFavorites(): void {
   this.fetchApiData.getFavoriteMovies().subscribe((resp: any) => {
